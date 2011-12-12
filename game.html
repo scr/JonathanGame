@@ -1,0 +1,32 @@
+<html>
+  <head>
+    <script
+       type="text/javascript"
+       src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+    <script
+       type="text/javascript"
+       src="http://ajax.aspnetcdn.com/ajax/jquery.templates/beta1/jquery.tmpl.min.js"></script>
+    <script type="text/javascript" src="game.js"></script>
+    <link rel="stylesheet" type="text/css" href="game.css" />
+    <title>Jonathan's Game</title>
+  </head>
+  <body>
+    <script>$(document).ready(game.Init)</script>
+    <div id="gameboard"></div>
+    <div id="controls">
+      <button id="east">East</button>
+      <button id="west">West</button>
+      <button id="north">North</button>
+      <button id="south">South</button>
+    </div>
+    <script id="gameboard-template" type="text/x-jquery-template">
+      {{each(i,row) rows}}
+      <div class="gameboard-row">
+	{{each(j, cell) row}}
+	<div class="gameboard-cell">${ cell }</div>
+	{{/each}}
+      </div>
+      {{/each}}
+    </script>
+  </body>
+</html>
